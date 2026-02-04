@@ -1,0 +1,8 @@
+Enter number of transaction events: 5
+Enter sorted transaction IDs:
+200 200 200 200 200
+
+Processed Transactions:
+200 
+Total events received: 5
+Unique transactions processed: 1
