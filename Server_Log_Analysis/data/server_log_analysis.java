@@ -15,3 +15,22 @@ public class ServerLogAnalysis {
         br.close();
         return logs;
     }
+
+     // Move zeros to end
+    static void moveZerosToEnd(List<Integer> logs) {
+        int index = 0;
+
+        for (int i = 0; i < logs.size(); i++) {
+            if (logs.get(i) != 0) {
+                Collections.swap(logs, index++, i);
+            }
+        }
+    }
+
+    // Linear search
+    static boolean searchRequest(List<Integer> logs, int target) {
+        for (int id : logs) {
+            if (id == target) return true;
+        }
+        return false;
+    }
