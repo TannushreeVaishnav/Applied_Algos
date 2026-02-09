@@ -69,3 +69,27 @@ public class ServerLogAnalysis {
             }
         }
     }
+    public static void main(String[] args) throws Exception {
+
+        List<Integer> server1 = readLogs("data/server1_logs.csv");
+        List<Integer> server2 = readLogs("data/server2_logs.csv");
+        List<Integer> status = readLogs("data/request_status.csv");
+
+        moveZerosToEnd(server1);
+        moveZerosToEnd(server2);
+
+        System.out.println("Cleaned Server1 Logs: " + server1);
+        System.out.println("Cleaned Server2 Logs: " + server2);
+
+        List<Integer> mergedLogs = unionLogs(server1, server2);
+        System.out.println("Unified Logs: " + mergedLogs);
+
+        findMissingRequests(mergedLogs);
+
+        System.out.println("Request 105 exists: " +
+                searchRequest(mergedLogs, 105));
+
+        System.out.println("Max uptime streak: " +
+                maxConsecutiveOnes(status));
+    }
+}
