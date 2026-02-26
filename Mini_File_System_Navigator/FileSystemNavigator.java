@@ -14,4 +14,35 @@ class FileNode {
         this.children = new ArrayList<>();
     }
 }
+public class FileSystemNavigator {
+
+    private FileNode root;
+
+    public FileSystemNavigator() {
+        root = new FileNode("Root", false, 0);
+    }
+
+    public FileNode getRoot() {
+        return root;
+    }
+
+    // Add a folder
+    public void addFolder(FileNode parent, String folderName) {
+        FileNode folder = new FileNode(folderName, false, 0);
+        parent.children.add(folder);
+    }
+
+    // Add a file
+    public void addFile(FileNode parent, String fileName, int size) {
+        FileNode file = new FileNode(fileName, true, size);
+        parent.children.add(file);
+    }
+
+    // Printing tree
+    public void printTree() {
+        printTree(root, 0);
+    }
+}
+
+
 
