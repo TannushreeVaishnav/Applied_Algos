@@ -43,6 +43,29 @@ public class FileSystemNavigator {
         printTree(root, 0);
     }
 }
+// Recursive DFS for clean tree printing
+    private void printTree(FileNode node, int level) {
+
+        if (node == null) return;
+
+        // Indentation
+        for (int i = 0; i < level; i++) {
+            System.out.print("    ");
+        }
+
+        // Print folder or file
+        if (node.isFile) {
+            System.out.println("- " + node.name + " (" + node.size + "KB)");
+        } else {
+            System.out.println("+ " + node.name);
+        }
+
+        // Traverse children
+        for (FileNode child : node.children) {
+            printTree(child, level + 1);
+        }
+    }
+
 
 
 
