@@ -97,7 +97,41 @@ public class FileSystemNavigator {
 
         return "File Not Found";
     }
+    // Main Method
+    public static void main(String[] args) {
 
+        FileSystemNavigator fs = new FileSystemNavigator();
+        FileNode root = fs.getRoot();
+
+        // Creating folders
+        fs.addFolder(root, "Documents");
+        fs.addFolder(root, "Photos");
+
+        // Adding files to Documents
+        FileNode documents = root.children.get(0);
+        fs.addFile(documents, "Resume.pdf", 120);
+        fs.addFile(documents, "Notes.txt", 50);
+
+        // Adding subfolder and file inside Photos
+        FileNode photos = root.children.get(1);
+        fs.addFolder(photos, "2025");
+
+        FileNode year2025 = photos.children.get(0);
+        fs.addFile(year2025, "Trip.jpg", 300);
+
+        // Print File System
+        System.out.println("File System Structure:\n");
+        fs.printTree();
+
+        // Total Size
+        int totalSize = fs.calculateTotalSize(root);
+        System.out.println("\nTotal Storage Used: " + totalSize + "KB");
+
+        // Search File
+        System.out.println("\nSearching for Resume.pdf...");
+        System.out.println(fs.searchFile("Resume.pdf"));
+    }
+}
 
 
 
