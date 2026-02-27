@@ -1,17 +1,16 @@
-# Mini File System Navigator (Java)
+# Mini File System Navigator 
 
 This is a simulation of a basic file system structure, similar to what operating systems use internally.
 
 In real systems like:
-      - Linux
-      - Microsoft Windows
-      - Google Drive
+- Linux
+- Microsoft Windows
+- Google Drive
 
 Directories and files are organized in a hierarchical structure (Tree).
-This project applies **DFS and BFS traversal techniques** on a tree structure to simulate file system operations.
+This file applies **DFS and BFS traversal techniques** on a tree structure to simulate file system operations.
 
 The goal of this file was to connect Data Structures (Binary Trees / Traversals) with real-world system design concepts instead of solving only textbook problems.
-
 
 ## Objective
 
@@ -19,7 +18,6 @@ The goal of this file was to connect Data Structures (Binary Trees / Traversals)
 - Implement DFS for recursive traversal
 - Implement BFS for level-wise traversal
 - Apply traversal algorithms to practical use cases
-
 
 ## Features Implemented
 
@@ -30,8 +28,7 @@ The goal of this file was to connect Data Structures (Binary Trees / Traversals)
 - Level order directory traversal (BFS)
 - Search for a file using BFS
 
-
-## 🧠 Concepts Used
+## Concepts Used
 
 - Tree Data Structure
 - Depth First Search (DFS)
@@ -41,7 +38,7 @@ The goal of this file was to connect Data Structures (Binary Trees / Traversals)
 - Object-Oriented Programming (Java)
 
 
-## 📂 Sample Structure
+## Sample Structure
 
 ```
 Root
@@ -50,11 +47,12 @@ Root
  │    └── Notes.txt (50KB)
  └── Photos
        └── 2025
+             └── Trip.jpg (300KB)
 ```
 
-## ⚙️ How It Works
+##  How It Works
 
-### 🔎 DFS (Depth First Search)
+### DFS (Depth First Search)
 
 **Used for:**
 - Listing all files recursively
@@ -62,45 +60,20 @@ Root
 
 **Time Complexity:** O(N)
 
-### 🌐 BFS (Breadth First Search)
+### BFS (Breadth First Search)
 
 **Used for:**
 - Printing directory level-by-level
 - Searching file efficiently across folders
 
 **Time Complexity:** O(N)
+## Output
+<img width="1331" height="850" alt="Screenshot 2026-02-27 204852" src="https://github.com/user-attachments/assets/3a12eef6-f23f-44e3-b1d3-250853b45a07" />
 
 
-## ▶️ How to Run
 
-1. Clone the repository
-2. Open in any Java IDE (IntelliJ / Eclipse / VS Code)
-3. Run `FileSystemNavigator.java`
-4. Output will be displayed in the console
-
-
-## 💡 Why I Built This
-
-While learning tree traversal in DSA, I wanted to understand how these concepts are actually used in real systems.
-
-Instead of only solving LeetCode-style problems, this project helped me understand:
-- How operating systems manage directories
-- How recursion works in real applications
-- How traversal algorithms scale in real-world scenarios
-
-
-## 🚀 Future Improvements
+## Future Improvements
 
 - Add full file path support (`/Documents/Resume.pdf`)
-- Implement delete file/folder feature
-- Add command-line based interaction
 - Add exception handling
 - Convert into REST API version
-
-
-## 📚 Learning Outcome
-
-Through this project, I improved my understanding of:
-- Applying DSA concepts to system design
-- Writing structured and modular Java code
-- Connecting theoretical knowledge with practical implementation
