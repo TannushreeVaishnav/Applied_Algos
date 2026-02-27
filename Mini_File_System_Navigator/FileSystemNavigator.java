@@ -48,7 +48,7 @@ public class FileSystemNavigator {
 
         if (node == null) return;
 
-        // Indentation
+        
         for (int i = 0; i < level; i++) {
             System.out.print("    ");
         }
@@ -65,6 +65,40 @@ public class FileSystemNavigator {
             printTree(child, level + 1);
         }
     }
+    // DFS to calculate total size
+    public int calculateTotalSize(FileNode node) {
+        if (node == null) return 0;
+
+        int total = node.isFile ? node.size : 0;
+
+        for (FileNode child : node.children) {
+            total += calculateTotalSize(child);
+        }
+
+        return total;
+    }
+    // BFS to search file
+    public String searchFile(String fileName) {
+
+        Queue<FileNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            FileNode current = queue.poll();
+
+            if (current.isFile && current.name.equals(fileName)) {
+                return "File Found: " + current.name + " (" + current.size + "KB)";
+            }
+
+            for (FileNode child : current.children) {
+                queue.add(child);
+            }
+        }
+
+        return "File Not Found";
+    }
+
+
 
 
 
