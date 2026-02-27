@@ -4,7 +4,7 @@ import java.util.*;
 class FileNode {
     String name;
     boolean isFile;
-    int size; // valid only if it is a file
+    int size; 
     List<FileNode> children;
 
     public FileNode(String name, boolean isFile, int size) {
@@ -14,10 +14,12 @@ class FileNode {
         this.children = new ArrayList<>();
     }
 }
+
 public class FileSystemNavigator {
 
     private FileNode root;
 
+    // Constructor
     public FileSystemNavigator() {
         root = new FileNode("Root", false, 0);
     }
@@ -38,17 +40,17 @@ public class FileSystemNavigator {
         parent.children.add(file);
     }
 
-    // Printing tree
+    // Public method to print tree
     public void printTree() {
         printTree(root, 0);
     }
-}
-// Recursive DFS for clean tree printing
+
+    // Recursive DFS for clean tree printing
     private void printTree(FileNode node, int level) {
 
         if (node == null) return;
 
-        
+        // Indentation
         for (int i = 0; i < level; i++) {
             System.out.print("    ");
         }
@@ -65,6 +67,7 @@ public class FileSystemNavigator {
             printTree(child, level + 1);
         }
     }
+
     // DFS to calculate total size
     public int calculateTotalSize(FileNode node) {
         if (node == null) return 0;
@@ -77,6 +80,7 @@ public class FileSystemNavigator {
 
         return total;
     }
+
     // BFS to search file
     public String searchFile(String fileName) {
 
@@ -97,6 +101,7 @@ public class FileSystemNavigator {
 
         return "File Not Found";
     }
+
     // Main Method
     public static void main(String[] args) {
 
@@ -132,8 +137,3 @@ public class FileSystemNavigator {
         System.out.println(fs.searchFile("Resume.pdf"));
     }
 }
-
-
-
-
-
