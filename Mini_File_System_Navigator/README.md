@@ -50,7 +50,7 @@ Root
              └── Trip.jpg (300KB)
 ```
 
-##  How It Works
+##  Working
 
 ### DFS (Depth First Search)
 
